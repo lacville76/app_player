@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark"
+    tools:context="com.example.lacville76.thedude_player.Activities.EqualizerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+
+        android:layout_below="@+id/presetSpinner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true">
+
+        <SeekBar
+            android:id="@+id/seekBar90Hz"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25dp"
+            android:max="100"
+            android:progress="100" />
+
+        <TextView
+            android:id="@+id/textView3600Hz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBar14000Hz"
+            android:layout_toEndOf="@+id/seekBar3600Hz"
+            android:layout_toRightOf="@+id/seekBar3600Hz"
+            android:text="3600Hz"
+            android:textColor="#FFFF" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="-15dB"
+            android:textColor="#FFFF" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/seekBar3600Hz"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/seekBar3600Hz"
+            android:text="+15dB"
+            android:textColor="#FFFF" />
+
+        <SeekBar
+            android:id="@+id/seekBar3600Hz"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/seekBar910Hz"
+            android:layout_marginTop="21dp"
+            android:max="100"
+            android:progress="100" />
+
+        <SeekBar
+            android:id="@+id/seekBar230Hz"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/seekBar90Hz"
+            android:layout_marginTop="22dp"
+            android:max="100"
+            android:progress="100" />
+
+        <SeekBar
+            android:id="@+id/seekBar14000Hz"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/seekBar3600Hz"
+            android:layout_marginTop="23dp"
+            android:max="100"
+            android:progress="100" />
+
+        <SeekBar
+            android:id="@+id/seekBar910Hz"
+            android:layout_width="215dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/seekBar230Hz"
+            android:layout_marginTop="23dp"
+            android:max="10"
+            android:progress="100" />
+
+        <TextView
+            android:id="@+id/textView230Hz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBar910Hz"
+            android:layout_toEndOf="@+id/seekBar230Hz"
+            android:layout_toRightOf="@+id/seekBar230Hz"
+            android:text="230Hz"
+            android:textColor="#FFFF" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seekBar90Hz"
+            android:layout_toEndOf="@+id/seekBar90Hz"
+            android:layout_toRightOf="@+id/seekBar90Hz"
+            android:text="90Hz"
+            android:textColor="#FFFF" />
+
+        <TextView
+            android:id="@+id/textView910Hz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seekBar910Hz"
+            android:layout_toEndOf="@+id/seekBar910Hz"
+            android:layout_toRightOf="@+id/seekBar910Hz"
+            android:text="910Hz"
+            android:textColor="#FFFF" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/textView2"
+            android:layout_toStartOf="@+id/textView2"
+            android:background="@drawable/list_back"
+            android:onClick="finishFragment" />
+
+        <TextView
+            android:id="@+id/textView14000Hz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seekBar14000Hz"
+            android:layout_toEndOf="@+id/seekBar14000Hz"
+            android:layout_toRightOf="@+id/seekBar14000Hz"
+            android:text="14000Hz"
+            android:textColor="#FFFF" />
+
+    </RelativeLayout>
+
+    <Spinner
+        android:id="@+id/presetSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mainLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/mainLayout"
+        android:visibility="visible"
+        android:textColor="#FFFF"/>
+
+</RelativeLayout>

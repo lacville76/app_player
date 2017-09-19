@@ -7,7 +7,7 @@
         android:layout_height="match_parent">
 
         <ListView
-            android:id="@+id/list1"
+            android:id="@+id/playlistsListView"
             android:layout_width="fill_parent"
             android:layout_height="391dp"
             android:layout_alignParentTop="true"
@@ -18,10 +18,25 @@
             android:id="@+id/back_button"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/list_back"
-            android:onClick="goBack" />
+            android:onClick="goBack"
+            android:layout_marginLeft="107dp"
+            android:layout_marginStart="107dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/addplaylisticon"
+            android:onClick="insertPlaylist"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/back_button"
+            android:layout_toEndOf="@+id/back_button"
+            android:layout_marginLeft="17dp"
+            android:layout_marginStart="17dp" />
     </RelativeLayout>
 
 </LinearLayout>

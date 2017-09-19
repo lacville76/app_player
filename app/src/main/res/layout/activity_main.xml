@@ -9,107 +9,231 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.lacville76.aplikacja_mgr_player.MainActivity">
+  android:background="@drawable/dark"
+    tools:context="com.example.lacville76.thedude_player.Activities.MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/play_button"
-        android:background="@mipmap/play_button"
-        android:layout_alignBaseline="@+id/pause_button"
-        android:layout_alignBottom="@+id/pause_button"
-        android:layout_toRightOf="@+id/pause_button"
-        android:layout_toEndOf="@+id/pause_button"
-        android:onClick="playTrack" />
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:id="@+id/mainLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pause_button"
-        android:background="@mipmap/pause_button"
-        android:layout_alignBaseline="@+id/stop_button"
-        android:layout_alignBottom="@+id/stop_button"
-        android:layout_toRightOf="@+id/stop_button"
-        android:layout_toEndOf="@+id/stop_button"
-        android:onClick="pauseTrack" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayout"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/stop_button"
-        android:background="@mipmap/stop_button"
-        android:layout_below="@+id/seekBar"
-        android:layout_alignLeft="@+id/seekBar"
-        android:layout_alignStart="@+id/seekBar"
-        android:onClick="stopTrack" />
+            <ImageView
+                android:id="@+id/albumThumb"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/player_image_center"
+                android:scaleType="center" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/volume_button"
-        android:background="@mipmap/volume_button"
+            <TextView
+                android:id="@+id/playerTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:layout_toRightOf="@+id/pause_button"
-        android:layout_toEndOf="@+id/pause_button"
-        android:layout_below="@+id/next_track_button" />
+                android:width="100dp"
+                android:text="0:00"
+                android:textColor="#FFFF"
+                android:layout_marginRight="58dp"
+                android:layout_marginEnd="58dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/open_button"
-        android:background="@mipmap/open_button"
-        android:onClick="openTrack"
-        android:layout_below="@+id/pause_button"
-        android:layout_alignLeft="@+id/stop_button"
-        android:layout_alignStart="@+id/stop_button" />
+            <TextView
+                android:id="@+id/songTitleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="21dp"
+                android:textColor="#FFFF"
+                android:textSize="18dp" />
+        </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/previous_track_button"
-        android:background="@mipmap/button_play"
-        android:layout_alignBaseline="@+id/play_button"
-        android:layout_alignBottom="@+id/play_button"
-        android:layout_toRightOf="@+id/play_button"
-        android:layout_toEndOf="@+id/play_button"
-        android:onClick="previousTrack" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="360dp"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/next_track_button"
-        android:background="@mipmap/button_next"
-        android:layout_below="@+id/seekBar"
-        android:layout_toRightOf="@+id/previous_track_button"
-        android:layout_toEndOf="@+id/previous_track_button"
-        android:onClick="nextTrack" />
+            <SeekBar
+                android:id="@+id/musicControlBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/playerTimeLabel"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/equalizer_button"
-        android:background="@mipmap/equalizer_button"
-        android:layout_alignBaseline="@+id/volume_button"
-        android:layout_alignBottom="@+id/volume_button"
-        android:layout_toRightOf="@+id/open_button"
-        android:layout_toEndOf="@+id/open_button"
-        android:onClick="launchEqualizer" />
+            <Button
+                android:id="@+id/play_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/play_button"
+                android:onClick="playTrack"
+                android:layout_alignBottom="@+id/next_track_button"
+                android:layout_toRightOf="@+id/previous_track_button"
+                android:layout_toEndOf="@+id/previous_track_button" />
 
-    <ListView
+            <Button
+                android:id="@+id/stop_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/stop_button"
+                android:onClick="stopTrack"
+                android:layout_below="@+id/musicControlBar"
+                android:layout_alignRight="@+id/textView26"
+                android:layout_alignEnd="@+id/textView26" />
+
+            <Button
+                android:id="@+id/openEqualizerButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+
+                android:background="@drawable/equalizer_image"
+                android:onClick="openEqualizer"
+                android:layout_alignBottom="@+id/playingModeButton"
+                android:layout_toRightOf="@+id/playingModeButton"
+                android:layout_alignTop="@+id/playingModeButton"
+                android:layout_toLeftOf="@+id/open_button"
+                android:layout_toStartOf="@+id/open_button" />
+
+            <Button
+                android:id="@+id/playingModeButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+
+                android:background="@drawable/ordered_image"
+                android:onClick="setPlayingMode"
+                android:layout_alignBottom="@+id/button3"
+                android:layout_toRightOf="@+id/button3"
+                android:layout_alignTop="@+id/button3"
+                android:layout_toLeftOf="@+id/next_track_button"
+                android:layout_toStartOf="@+id/next_track_button" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+
+                android:background="@drawable/playlist_add"
+                android:onClick="openListForEdit"
+                android:layout_alignTop="@+id/textView26"
+                android:layout_toRightOf="@+id/textView26"
+                android:layout_toEndOf="@+id/textView26" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+
+                android:background="@drawable/playlist_image"
+                android:onClick="openListForPlay"
+                android:layout_alignTop="@+id/textView26"
+                android:layout_alignRight="@+id/textView26"
+                android:layout_alignEnd="@+id/textView26" />
+
+            <Button
+                android:id="@+id/open_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/open_track_button"
+                android:onClick="openTrack"
+                android:layout_below="@+id/musicControlBar"
+                android:layout_toRightOf="@+id/next_track_button"
+                android:layout_toEndOf="@+id/next_track_button" />
+
+            <Button
+                android:id="@+id/previous_track_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/musicControlBar"
+                android:layout_toEndOf="@+id/textView26"
+                android:layout_toRightOf="@+id/textView26"
+                android:background="@drawable/play_button_previous"
+                android:onClick="playPrevious" />
+
+            <Button
+                android:id="@+id/next_track_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignBaseline="@+id/open_button"
+                android:layout_alignBottom="@+id/open_button"
+                android:layout_toEndOf="@+id/play_button"
+                android:layout_toRightOf="@+id/play_button"
+                android:background="@drawable/play_button_next"
+                android:onClick="playNext" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="60dp"
+                android:layout_marginLeft="82dp"
+                android:layout_marginStart="82dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/volume_button"
-        android:layout_alignRight="@+id/next_track_button"
-        android:layout_alignEnd="@+id/next_track_button" />
+        android:layout_alignParentTop="true"
+        android:id="@+id/relativeLayout3"
+        android:layout_toRightOf="@+id/mainLayout"
+        android:layout_toEndOf="@+id/mainLayout">
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+
+        android:background="@drawable/button_volume"
+        android:layout_marginLeft="57dp"
+        android:layout_marginStart="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/volumeSeekbar" />
 
     <SeekBar
+        android:id="@+id/volumeSeekbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
+        android:layout_marginBottom="88dp"
         android:max="100"
-        android:minWidth="300dp"
-        android:layout_marginTop="149dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:progress="50"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/relativeLayout3"
+        android:layout_alignEnd="@+id/relativeLayout3"
+        android:layout_toRightOf="@+id/button2"
+        android:layout_toEndOf="@+id/button2" />
+
+
 </RelativeLayout>
